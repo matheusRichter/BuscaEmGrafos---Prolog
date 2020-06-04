@@ -1,0 +1,40 @@
+Item 2 - Demostração:
+	busca_profundidade(porto_alegre,curitiba,[1],P).
+	busca_profundidade(sao_paulo,brasilia,[1],P).
+
+Item 3 - Demonstração:
+	busca_profundidade(porto_alegre,curitiba,[1],P,0,D).
+	busca_profundidade(sao_paulo,brasilia,[1],P,0,D).
+
+	Apresentação:
+	
+	* As diferenças dos predicados do Item 2 para os desse item são, apenas, o parâmetro da distância nos predicados 'aresta', 'conectado' e 'prox_node', os parâmetros de distância inicial e distância final no predicado 'busca_profundidade' e, também nesse predicado, um acumulador para contar a distância percorrida.
+
+Item 4 - Demontração:
+	busca_profundidades(porto_alegre,curitiba,[1],P,0,D).
+	busca_profundidades(sao_paulo,brasilia,[1],P,0,D).
+
+	Apresentação:
+
+	* A diferença entre esse predicado e o predicado do Item 2 são as mesmas entre o Item 2 e o Item 3, mais o 'cut' que foi retirado do fim do predicado 'busca_profundidades'.
+	* A diferença entre esse predicado e o predicado do Item 3 é, apenas, a ausência do 'cut' no final do predicado 'busca_profundidades'.
+
+Item 5 - Demonstração:
+	busca_largura(porto_alegre,curitiba,C).
+	busca_largura(sao_paulo,brasilia,C).
+
+	Apresentação:
+
+	* consed: coloca uma cabeça na lista recebida. A variável 'A' é uma lista, a variável 'B' é um elemento e o terceiro parâmetro é uma lista que tem 'B' como cabeça e 'A' como corpo.
+
+	* busca_larg (critério de parada): a variável 'Meta' representa onde se quer chegar, o segundo parâmetro é uma lista que verifica se o a 'Meta' foi encontrada e o caminho percorrido, o terceiro parâmetro é a lista com a 'Meta' e o caminho percorrido
+
+	* busca_larg 2: (1)'Meta', 
+		(2) no 2º parâmetro verifica-se se o 1º elemento de 'Visitados' é  a 'Meta'. 
+		(3)Verifica se a cabeça de 'Visitados' é diferente de 'Meta'. 		(4) Encontra todos os elementos conectados a 'Inicio' (os nós filhos), mas que não seja membro de 'Visitados'. 
+		(5) encontra todos os filhos do nó atual. 
+		(6) concatena 'RestoVisitados' com 'VisitadosExtendido', gerando 'VisitadosAtualizado'. 
+		(7) mostra a lista 'VisitadosAtualizado'. 
+		(8) chamada recursiva.
+
+	* busca_largura: facilita a chamada de busca_larg
